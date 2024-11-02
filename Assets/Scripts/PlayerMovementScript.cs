@@ -26,12 +26,13 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Start(){
         // initialization of this game objects Rigidbody2D
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         // rolling functionality
+        // currently has a cooldown period we can extend it or eliminate it all together if necessary
         Roll();
     }
 
