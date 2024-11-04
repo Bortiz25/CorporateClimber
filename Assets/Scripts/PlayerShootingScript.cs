@@ -6,6 +6,7 @@ using UnityEngine.Video;
 
 public class PlayerShootingScript : MonoBehaviour
 {
+    // bullet speed for shooting
     private float bulletSpeed = 9;
     // Subject to change the way that the prefab is detected
     public Rigidbody2D bulletPrefab;
