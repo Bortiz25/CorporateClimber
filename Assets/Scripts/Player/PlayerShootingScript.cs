@@ -13,7 +13,15 @@ public class PlayerShootingScript : MonoBehaviour
     // direction of bullet based on the player movement 
     private Vector2 shootingDirection; 
     // playerMovementScript used to getPlayerMovement
-    public PlayerMovementScript playerMovement; 
+    private PlayerManagementScript playerMovement; 
+    // boolean to determine if player has picked up a weapon
+    private bool hasWeapon;
+    private float bulletAmt;
+
+    void Start(){
+        playerMovement = gameObject.GetComponent<PlayerManagementScript>();
+        bulletAmt = 0;
+    }
 
     void Update()
     {
@@ -24,10 +32,25 @@ public class PlayerShootingScript : MonoBehaviour
     }
 
     private void Shoot(){
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) && hasWeapon && bulletAmt != 0){
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = shootingDirection * bulletSpeed;
             bullet.AddForce(bulletSpeed * shootingDirection, ForceMode2D.Impulse);
+            bulletAmt--;
         }
+    }
+
+    // getter for has weapon to manipulate in the interaction script
+    public bool GetHasWeapon(){
+        return hasWeapon;
+    }
+
+    //setter for manipulating hasWeapon
+    public void SetHasWeapon(bool weaponPick){
+        hasWeapon = weaponPick;
+    }
+
+    public void SetBulletAmt(float amt){
+        bulletAmt = amt;
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5775134061017175028
+--- !u!1 &5218923218803452465
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1203676148804092222}
-  - component: {fileID: 100416666576804870}
-  - component: {fileID: 8177773890771092964}
-  m_Layer: 6
-  m_Name: Weapon
+  - component: {fileID: 5576818316271195715}
+  - component: {fileID: 4380656598724793021}
+  - component: {fileID: -768484386496903591}
+  m_Layer: 7
+  m_Name: File
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1203676148804092222
+--- !u!4 &5576818316271195715
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775134061017175028}
+  m_GameObject: {fileID: 5218923218803452465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.01, y: 4.96, z: 0}
+  m_LocalPosition: {x: -1.62, y: 3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &100416666576804870
+--- !u!212 &4380656598724793021
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775134061017175028}
+  m_GameObject: {fileID: 5218923218803452465}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,19 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8177773890771092964
+--- !u!114 &-768484386496903591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775134061017175028}
+  m_GameObject: {fileID: 5218923218803452465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ae678e5cc64b7fa80c7627b1d5246, type: 3}
+  m_Script: {fileID: 11500000, guid: 20fa69faca9a744f4a9e2e10ba73a4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
+  playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerShoot: {fileID: 4990368794458419129, guid: 176c18684aa374bae9e70300b56427b2, type: 3}
+  player: {fileID: 2901378233651021649, guid: 176c18684aa374bae9e70300b56427b2, type: 3}
