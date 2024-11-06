@@ -56,6 +56,8 @@ public class PlayerManagementScript : MonoBehaviour
             if(healthVal - diminishAmt < 0) healthVal = 0;
             else healthVal -= diminishAmt;
         }
+
+        Debug.Log("files: " + fileAmt);
     }
 
     // got this from the video it ensures that when isRolling we can't interfere

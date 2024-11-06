@@ -23,10 +23,10 @@ public class WorkFileScript : MonoBehaviour
     void PlayerIntersection(){
         if(Physics2D.OverlapCircle(gameObject.transform.position, 0.2f, playerLayer)){
             Debug.Log("File Object intersecting with player!");
-            player.SetFileAmt(player.GetFileAmt()+1);
+            player.SetFileAmt(count + 1);
             gameObject.SetActive(false);
         }
 
-        Debug.Log("file count: " + count);
+        Debug.Log("file count file Script: " + count);
     }
 }
