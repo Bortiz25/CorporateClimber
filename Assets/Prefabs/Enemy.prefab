@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963228832283630170}
   - component: {fileID: 3466298466549379512}
+  - component: {fileID: 3109802343143066058}
+  - component: {fileID: 1309737089571621800}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -84,3 +86,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3109802343143066058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6024764222948804941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef40573d85c764b99b9c8a67afb3f451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fovAngle: 360
+  fovPoint: {fileID: 963228832283630170}
+  range: 3
+  target: {fileID: 0}
+--- !u!114 &1309737089571621800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6024764222948804941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca701f69b7864f4fb39f049e1fafc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInFieldOfView: 0
+  followPath: 0
+  spinAround: 0
+  player: {fileID: 0}
+  defaultSpeed: 2
+  pathPoints: []
