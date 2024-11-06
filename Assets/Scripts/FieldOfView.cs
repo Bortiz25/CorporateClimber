@@ -9,15 +9,29 @@ public class FieldOfView : MonoBehaviour
     public Transform fovPoint;
     public float range = 8;
     public Transform target;
+    private Color defaultColor;
+    private void Start() {
+        defaultColor = GetComponent<SpriteRenderer>().color;    
+    }
     void Update()
     {
        Vector2 dir = target.position - transform.position;
        float angle = Vector3.Angle(dir, fovPoint.up);
        RaycastHit2D r = Physics2D.Raycast(fovPoint.position, dir, range);
        if(angle < fovAngle / 2){
-            if(r.collider.CompareTag("Player")){
-                Debug.Log("Player has been seen");
+            if(r && r.collider.CompareTag("Player")){
+                // Debug.Log("Player has been seen");
                 Debug.DrawRay(fovPoint.position, dir, Color.red);
+                
+                // ENEMY turns RED
+                GetComponent<SpriteRenderer>().color = Color.red;
+                // Enable ENEMY movement towards player
+                GetComponent<EnemyMovement>().playerInFieldOfView = true;
+            } else {
+                // ENEMY turns DEFAULT COLOR
+                GetComponent<SpriteRenderer>().color = defaultColor;
+                // Disable ENEMY movement towards player
+                GetComponent<EnemyMovement>().playerInFieldOfView = false;
             }
        }
     }
