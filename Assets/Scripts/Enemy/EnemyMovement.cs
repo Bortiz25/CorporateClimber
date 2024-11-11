@@ -13,12 +13,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float defaultSpeed;
     [SerializeField] private List<Transform> pathPoints;
     private int pathPointsListIndex = 0;
-    // starting position
     void Update()
     {
         if(playerInFieldOfView) MoveToFollowPlayer();
         else {
             if(followPath && pathPoints != null) MoveToFollowPath();
+            if(spinAround) SpinInACicle();
         }
     }
 
@@ -42,6 +42,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void SpinInACicle(){
-        
+        transform.Rotate(Vector3.forward*15* Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Player")) player.GetComponent<PlayerManagementScript>().Reset();
     }
 }

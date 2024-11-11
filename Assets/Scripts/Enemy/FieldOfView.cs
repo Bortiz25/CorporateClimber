@@ -20,9 +20,9 @@ public class FieldOfView : MonoBehaviour
        RaycastHit2D r = Physics2D.Raycast(fovPoint.position, dir, range);
        if(angle < fovAngle / 2){
             if(r && r.collider.CompareTag("Player")){
-                // Debug.Log("Player has been seen");
+                Debug.Log("Player has been seen");
                 Debug.DrawRay(fovPoint.position, dir, Color.red);
-                
+
                 // ENEMY turns RED
                 GetComponent<SpriteRenderer>().color = Color.red;
                 // Enable ENEMY movement towards player

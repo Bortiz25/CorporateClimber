@@ -13,6 +13,7 @@ public class PlayerManagementScript : MonoBehaviour
     // the player rigidbody2d
     private Rigidbody2D rb; 
     // movement variables from OnMove
+    private Vector3 startPos;
     private Vector2 movement;
     private Vector2 savedMovement; 
     // default speed variable
@@ -40,6 +41,7 @@ public class PlayerManagementScript : MonoBehaviour
     void Start(){
         // initialization of this game objects Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
 
         healthBar.gameObject.SetActive(inBoss);
     }
@@ -108,5 +110,9 @@ public class PlayerManagementScript : MonoBehaviour
 
     public void SetFileAmt(float amt){
         fileAmt = amt;
+    }
+
+    public void Reset(){
+        transform.position = startPos;
     }
 }
