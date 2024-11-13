@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boundary
   - Walkable
+  - PlayerTransform
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Weapon
   - WorkFile
   - PlayerLayer
-  - 
-  - 
+  - WalkableLayer
+  - UnwalkableLayer
   - 
   - 
   - 

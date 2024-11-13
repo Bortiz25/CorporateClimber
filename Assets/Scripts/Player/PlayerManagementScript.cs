@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using Unity.VisualScripting.InputSystem;
 using UnityEditor.Callbacks;
@@ -11,19 +12,19 @@ using UnityEngine.InputSystem;
 public class PlayerManagementScript : MonoBehaviour
 {
     // the player rigidbody2d
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
     // movement variables from OnMove
     private Vector3 startPos;
     private Vector2 movement;
-    private Vector2 savedMovement; 
+    private Vector2 savedMovement;
     // default speed variable
-    private float speed = 5; 
+    private float speed = 5;
 
     // Rolling variables
     private bool canRoll = true;
-    private bool isRolling; 
+    private bool isRolling;
     private float rollSpeed = 12;
-    private float rollingTime = 0.25f; 
+    private float rollingTime = 0.25f;
     private float rollCooldown = 1f;
 
     //health bar code
@@ -38,7 +39,11 @@ public class PlayerManagementScript : MonoBehaviour
     // checking files picked up
     private float fileAmt = 0;
 
-    void Start(){
+    // Radius for checking collisions
+    private float checkRadius = 0.5f;
+
+    void Start()
+    {
         // initialization of this game objects Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
@@ -53,36 +58,41 @@ public class PlayerManagementScript : MonoBehaviour
         Roll();
 
         // test code to manipulate health
-        healthBar.transform.localScale = new Vector3(healthVal, 0.13f,1);
-        if(inBoss && Input.GetKeyDown(KeyCode.P)){
-            if(healthVal - diminishAmt < 0) healthVal = 0;
+        healthBar.transform.localScale = new Vector3(healthVal, 0.13f, 1);
+        if (inBoss && Input.GetKeyDown(KeyCode.P))
+        {
+            if (healthVal - diminishAmt < 0) healthVal = 0;
             else healthVal -= diminishAmt;
         }
 
-        Debug.Log("files: " + fileAmt);
+        // Debug.Log("files: " + fileAmt);
     }
 
     // got this from the video it ensures that when isRolling we can't interfere
     // probably useless line of code but I don't mind it
-    void FixedUpdate(){
-        if(isRolling) return;
+    void FixedUpdate()
+    {
+        if (isRolling) return;
     }
     // handles calling the couroutine and the user input for rolling
-    private void Roll(){
-        if(Input.GetKeyDown(KeyCode.R) && canRoll){
+    private void Roll()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && canRoll)
+        {
             StartCoroutine(RollingHandler());
         }
-        if(isRolling) return;
+        if (isRolling) return;
     }
 
     // hanldes the change in velocity for rolling to occur 
     // and handles cooldown for rolling effect 
-    private IEnumerator RollingHandler(){
-        canRoll = false; 
+    private IEnumerator RollingHandler()
+    {
+        canRoll = false;
         isRolling = true;
         rb.velocity = savedMovement * rollSpeed;
         yield return new WaitForSeconds(rollingTime);
-        rb.velocity = movement * speed; 
+        rb.velocity = movement * speed;
         isRolling = false;
         yield return new WaitForSeconds(rollCooldown);
         canRoll = true;
@@ -90,29 +100,70 @@ public class PlayerManagementScript : MonoBehaviour
 
     // getter for savedMovement 
     // useful variable for shooting and for rolling effect
-    public Vector2 GetMovementVector(){
-        if(savedMovement == Vector2.zero){
-            savedMovement = new Vector2(0,1);
+    public Vector2 GetMovementVector()
+    {
+        if (savedMovement == Vector2.zero)
+        {
+            savedMovement = new Vector2(0, 1);
         }
         return savedMovement;
     }
 
     // OnMove function from playerinputsystem 
-    void OnMove(InputValue val){
+    void OnMove(InputValue val)
+    {
         movement = val.Get<Vector2>();
         gameObject.GetComponent<Rigidbody2D>().velocity = movement * speed;
-        if(movement != Vector2.zero){savedMovement = movement;}
+        if (movement != Vector2.zero) { savedMovement = movement; }
     }
 
-    public float GetFileAmt(){
+    public float GetFileAmt()
+    {
         return fileAmt;
     }
 
-    public void SetFileAmt(float amt){
+    public void SetFileAmt(float amt)
+    {
         fileAmt = amt;
     }
 
-    public void Reset(){
+    private void TakeDamage(float damage)
+    {
+        healthVal -= damage;
+        if (healthVal <= 0)
+        {
+            healthVal = 0;
+            // Die();
+        }
+    }
+
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Debug.Log("Checking for BossBullet collision");
+    //     if (collision.gameObject.CompareTag("BossBullet"))
+    //     {
+    //         Debug.Log("Hit by BossBullet. Taking damage.");
+    //         TakeDamage(diminishAmt); // Adjust damage amount as needed
+
+    //         // Optionally destroy the bullet on collision
+    //         Destroy(collision.gameObject);
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Checking for BossBullet collision");
+        if (collision.gameObject.CompareTag("BossBullet"))
+        {
+            Debug.Log("Hit by BossBullet. Taking damage.");
+            TakeDamage(diminishAmt); // Adjust damage amount as needed
+
+            // Optionally destroy the bullet on collision
+            // Destroy(collision.gameObject);
+        }
+    }
+    public void Reset()
+    {
         transform.position = startPos;
     }
 }
