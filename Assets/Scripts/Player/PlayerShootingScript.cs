@@ -15,12 +15,12 @@ public class PlayerShootingScript : MonoBehaviour
     // playerMovementScript used to getPlayerMovement
     private PlayerManagementScript playerMovement; 
     // boolean to determine if player has picked up a weapon
-    private bool hasWeapon;
-    private float bulletAmt;
+    public bool hasWeapon;
+    public float bulletAmt;
 
     void Start(){
         playerMovement = gameObject.GetComponent<PlayerManagementScript>();
-        bulletAmt = 0;
+        bulletAmt = 1000;
     }
 
     void Update()
@@ -33,6 +33,7 @@ public class PlayerShootingScript : MonoBehaviour
 
     private void Shoot(){
         if(Input.GetKeyDown(KeyCode.Space) && hasWeapon && bulletAmt != 0){
+            Debug.Log("Player Shooting Activated");
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = shootingDirection * bulletSpeed;
             bullet.AddForce(bulletSpeed * shootingDirection, ForceMode2D.Impulse);
