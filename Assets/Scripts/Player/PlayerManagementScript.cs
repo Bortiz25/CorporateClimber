@@ -159,7 +159,7 @@ public class PlayerManagementScript : MonoBehaviour
             TakeDamage(diminishAmt); // Adjust damage amount as needed
 
             // Optionally destroy the bullet on collision
-            // Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
         }
     }
     public void Reset()
