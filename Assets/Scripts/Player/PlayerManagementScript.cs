@@ -42,6 +42,8 @@ public class PlayerManagementScript : MonoBehaviour
     // Radius for checking collisions
     private float checkRadius = 0.5f;
 
+    
+
     void Start()
     {
         // initialization of this game objects Rigidbody2D
