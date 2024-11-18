@@ -139,20 +139,7 @@ public class PlayerManagementScript : MonoBehaviour
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Debug.Log("Checking for BossBullet collision");
-    //     if (collision.gameObject.CompareTag("BossBullet"))
-    //     {
-    //         Debug.Log("Hit by BossBullet. Taking damage.");
-    //         TakeDamage(diminishAmt); // Adjust damage amount as needed
-
-    //         // Optionally destroy the bullet on collision
-    //         Destroy(collision.gameObject);
-    //     }
-    // }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Checking for BossBullet collision");
         if (collision.gameObject.CompareTag("BossBullet"))
@@ -164,6 +151,19 @@ public class PlayerManagementScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     Debug.Log("Checking for BossBullet collision");
+    //     if (collision.gameObject.CompareTag("BossBullet"))
+    //     {
+    //         Debug.Log("Hit by BossBullet. Taking damage.");
+    //         TakeDamage(diminishAmt); // Adjust damage amount as needed
+
+    //         // Optionally destroy the bullet on collision
+    //         Destroy(collision.gameObject);
+    //     }
+    // }
     public void Reset()
     {
         transform.position = startPos;

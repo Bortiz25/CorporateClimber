@@ -22,6 +22,7 @@ public class MinibossMovementScript : MonoBehaviour
     public GameObject healthBar;
     public float health = 2f;
     public float damage = 0.2f;
+    private bool isAlive = true; 
 
 
     void Start()
@@ -130,13 +131,21 @@ public class MinibossMovementScript : MonoBehaviour
     }
 
 // player bullet collision
-    private void OnCollisionEnter2D(Collision2D collision2D){
-        if(collision2D.gameObject.CompareTag("PlayerBullet")){
+    // private void OnCollisionEnter2D(Collision2D collision2D){
+    //     if(collision2D.gameObject.CompareTag("PlayerBullet")){
+    //         Debug.Log("Boss is getting hit");
+    //         if(health - damage < 0 ) health = 0;
+    //         else health-= damage;
+
+    //         Destroy(collision2D.gameObject);
+    //     }
+    // }
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.CompareTag("PlayerBullet")){
             Debug.Log("Boss is getting hit");
             if(health - damage < 0 ) health = 0;
             else health-= damage;
-
-            Destroy(collision2D.gameObject);
+            Destroy(other.gameObject);
         }
     }
 

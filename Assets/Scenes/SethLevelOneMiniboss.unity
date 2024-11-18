@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8967411179097965115, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6869317905383717672, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: healthBar
@@ -3299,6 +3299,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878025494065728479, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
