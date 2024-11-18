@@ -145,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 1488951800310560206, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 938043257033079240, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
+      objectReference: {fileID: -7278416037252223734, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
     - target: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_Name
       value: Miniboss
