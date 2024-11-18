@@ -8,7 +8,7 @@ using UnityEngine.Video;
 public class PlayerShootingScript : MonoBehaviour
 {
     // bullet speed for shooting
-    private float bulletSpeed = 20;
+    public float bulletSpeed = 9;
     // Subject to change the way that the prefab is detected
     public Rigidbody2D bulletPrefab;
     // direction of bullet based on the player movement 
@@ -31,7 +31,8 @@ public class PlayerShootingScript : MonoBehaviour
         // updating the direction we are shooting based on movement 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        shootingDirection = new Vector2((mousePosition - gameObject.transform.position).normalized.x, (mousePosition- gameObject.transform.position).normalized.y);
+        shootingDirection = new Vector2((mousePosition - gameObject.transform.position).x, (mousePosition- gameObject.transform.position).y);
+        shootingDirection.Normalize();
         // calling shooting method
         Shoot();
     }
