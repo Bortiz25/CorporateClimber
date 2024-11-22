@@ -57,7 +57,7 @@ public class PlayerShootingScript : MonoBehaviour
     }
 
     private void ShootingAction(){
-        if(canShoot && Input.GetKeyDown(KeyCode.Space)) StartCoroutine(ShootingHandler());
+        if(canShoot && /*Input.GetKeyDown(KeyCode.Space)*/ Input.GetMouseButtonDown(0)) StartCoroutine(ShootingHandler());
         else return; 
     }
 
