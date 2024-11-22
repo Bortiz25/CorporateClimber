@@ -100,4 +100,4 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
-  playerShoot: {fileID: 4990368794458419129, guid: 176c18684aa374bae9e70300b56427b2, type: 3}
+  playerShoot: {fileID: -688288359448214573, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2901378233651021649}
   - component: {fileID: 5564142539538002832}
   - component: {fileID: 5951151891356928123}
+  - component: {fileID: -688288359448214573}
   m_Layer: 8
   m_Name: Player
   m_TagString: PlayerTransform
@@ -205,6 +206,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-688288359448214573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419366347939345149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce0a7383eea4f98841415c243cade8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 938043257033079240, guid: aaa7a4dea1ede43dfa6b10f083410c26, type: 3}
 --- !u!1 &3877283042478114003
 GameObject:
   m_ObjectHideFlags: 0
