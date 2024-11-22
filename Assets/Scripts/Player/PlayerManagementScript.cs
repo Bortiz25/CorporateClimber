@@ -79,7 +79,7 @@ public class PlayerManagementScript : MonoBehaviour
     // handles calling the couroutine and the user input for rolling
     private void Roll()
     {
-        if (Input.GetKeyDown(KeyCode.R) && canRoll)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canRoll)
         {
             StartCoroutine(RollingHandler());
         }
