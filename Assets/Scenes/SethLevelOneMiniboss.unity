@@ -136,20 +136,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8967411179097965115, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8967411179097965115, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -6869317905383717672, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 362694878}
-    - target: {fileID: -6869317905383717672, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: -6869317905383717672, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -158,10 +154,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1744017339}
-    - target: {fileID: 1488951800310560206, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: -7278416037252223734, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
     - target: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_Name
       value: Miniboss
@@ -234,6 +226,11 @@ PrefabInstance:
       addedObject: {fileID: 362694879}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+--- !u!1 &34934861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+  m_PrefabInstance: {fileID: 34934860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &94294693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4579867135388726934, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
@@ -328,6 +325,55 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.14, z: -20}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &261164243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261164245}
+  - component: {fileID: 261164244}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &261164244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261164243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7698f54de98b4454f9facbb1e94539cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinibossLevel: 1
+  SneakLevel: 0
+  MiniBoss: {fileID: 34934861}
+  Player: {fileID: 0}
+  SneakEndPoint: {fileID: 0}
+--- !u!4 &261164245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261164243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9432743, y: -2.204587, z: -0.0568706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3395,3 +3441,4 @@ SceneRoots:
   - {fileID: 664100215}
   - {fileID: 1155492621}
   - {fileID: 1004376146}
+  - {fileID: 261164245}
