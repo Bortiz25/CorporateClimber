@@ -463,6 +463,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f0a4e5ed38146259d755a87832c422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &407462766
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407462752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9e1378a2688b497e9a97e2042b63d75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &407462771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407462752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080aabaca975d400ab85d0d1a398f5eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &499824580 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6024764222948804941, guid: 774c0878517ac441dae4c2a84f5859ec, type: 3}
@@ -2289,14 +2322,60 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 246395837, guid: 318f1fa9e70ae4cce8019f8e5d85c425, type: 3}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5564142539538002832, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8686442
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Size.y
+      value: 0.87802666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.23098668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951151891356928123, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2419366347939345149, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 407462766}
+    - targetCorrespondingSourceObject: {fileID: 2419366347939345149, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 407462771}
   m_SourcePrefab: {fileID: 100100000, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
 --- !u!1001 &1797630071
 PrefabInstance:

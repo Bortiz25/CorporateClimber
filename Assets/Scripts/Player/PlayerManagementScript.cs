@@ -38,12 +38,14 @@ public class PlayerManagementScript : MonoBehaviour
     // checking files picked up
     private float fileAmt = 0;
 
+
     void Start(){
         // initialization of this game objects Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
 
         healthBar.gameObject.SetActive(inBoss);
+        
     }
 
     void Update()
@@ -60,6 +62,13 @@ public class PlayerManagementScript : MonoBehaviour
         }
 
         Debug.Log("files: " + fileAmt);
+
+        // player animation calls
+        GetComponent<PlayerAnimation>().SetAnimationDirection(savedMovement);
+        GetComponent<PlayerAnimation>().SetAnimationRollBool(isRolling);
+        if(movement == Vector2.zero){
+            GetComponent<PlayerAnimation>().SetAnimationWalkBool(false);
+        }
     }
 
     // got this from the video it ensures that when isRolling we can't interfere
@@ -101,7 +110,11 @@ public class PlayerManagementScript : MonoBehaviour
     void OnMove(InputValue val){
         movement = val.Get<Vector2>();
         gameObject.GetComponent<Rigidbody2D>().velocity = movement * speed;
-        if(movement != Vector2.zero){savedMovement = movement;}
+        if(movement != Vector2.zero){
+            savedMovement = movement;
+            // player animation call
+            GetComponent<PlayerAnimation>().SetAnimationWalkBool(true);
+        }
     }
 
     public float GetFileAmt(){
