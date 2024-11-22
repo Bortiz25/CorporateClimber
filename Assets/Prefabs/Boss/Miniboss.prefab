@@ -144,7 +144,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -190,4 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 938043257033079240, guid: aaa7a4dea1ede43dfa6b10f083410c26, type: 3}
-  minibossMovement: {fileID: -6869317905383717672}
+  bulletSpeed: 9
+  shootInterval: 2
+  playerTransform: {fileID: 0}
