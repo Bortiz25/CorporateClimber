@@ -41,7 +41,6 @@ public class PlayerShootingScript : MonoBehaviour
 
     private void Shoot(){
         if(hasWeapon && bulletAmt != 0){
-            Debug.Log("shootingDirection: " + shootingDirection);
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = shootingDirection*bulletSpeed;
             bullet.AddForce(bulletSpeed*shootingDirection, ForceMode2D.Impulse);
