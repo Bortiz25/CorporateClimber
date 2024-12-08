@@ -74,6 +74,7 @@ public class PlayerManagementScript : MonoBehaviour
         // player animation calls
         GetComponent<PlayerAnimation>().SetAnimationDirection(savedMovement);
         GetComponent<PlayerAnimation>().SetAnimationRollBool(isRolling);
+        Debug.Log(isRolling);
         if(movement == Vector2.zero){
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(false);
         }
@@ -178,6 +179,10 @@ public class PlayerManagementScript : MonoBehaviour
     //         Destroy(collision.gameObject);
     //     }
     // }
+
+    public float getFileCount() {
+        return fileAmt; 
+    }
     public void Reset()
     {
         transform.position = startPos;
