@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             levelComplete = false;
             levelNumber++;
         } else if (levelNumber == 1) {
-            SceneManager.LoadScene("SethLevelOneMiniboss");
+            SceneManager.LoadScene("LevelOneMiniboss");
             levelComplete = false;
             levelNumber++;
         } else {
