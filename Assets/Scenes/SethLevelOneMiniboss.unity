@@ -3310,9 +3310,49 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1744017339}
+    - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1984887386, guid: 4d02384bc16954d2b82716bc31ded765, type: 3}
+    - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2313209513415911959, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_Name
       value: Miniboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.15116279
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.83268744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

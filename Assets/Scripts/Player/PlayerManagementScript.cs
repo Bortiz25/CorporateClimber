@@ -23,7 +23,7 @@ public class PlayerManagementScript : MonoBehaviour
     private bool canRoll = true;
     private bool isRolling;
     private float rollSpeed = 12;
-    private float rollingTime = 0.25f;
+    private float rollingTime = 0.35f;
     private float rollCooldown = 1f;
 
     //health bar code
