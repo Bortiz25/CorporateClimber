@@ -127,6 +127,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2313209513415911959, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
   m_PrefabInstance: {fileID: 9077778315964461935}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &34934862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34934861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18c0236730b2846cfa686e08c0d6b49f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &117870640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,11 +3353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.15116279
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.83268744
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -3348,16 +3369,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 6.25
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 3908860831277523590, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.25
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2313209513415911959, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 34934862}
   m_SourcePrefab: {fileID: 100100000, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
