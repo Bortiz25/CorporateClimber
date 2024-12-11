@@ -46,6 +46,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player")) player.GetComponent<PlayerManagementScript>().Reset();
+        if(other.CompareTag("Player")){
+            // player.GetComponent<PlayerManagementScript>().Reset();
+            player.GetComponent<PlayerManagementScript>().OnCharacterDeath();
+        } 
+        
     }
 }

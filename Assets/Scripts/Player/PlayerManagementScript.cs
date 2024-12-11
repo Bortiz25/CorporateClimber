@@ -7,6 +7,7 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManagementScript : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class PlayerManagementScript : MonoBehaviour
     public bool inBoss = true;
 
     // checking for life variables
-    private bool isAlive = true;
+    public bool isAlive = true;
     // checking files picked up
     private float fileAmt = 0;
 
@@ -166,6 +167,12 @@ public class PlayerManagementScript : MonoBehaviour
         }
     }
 
+    public void OnCharacterDeath()
+    {
+        SceneManager.LoadScene("DeathScreen");
+        isAlive = false;
+    }
+
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
     //     Debug.Log("Checking for BossBullet collision");
@@ -182,4 +189,6 @@ public class PlayerManagementScript : MonoBehaviour
     {
         transform.position = startPos;
     }
+
+
 }

@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int levelNumber = 1;
+    private int levelNumber = 0;
     public bool MinibossLevel = false;
     public bool SneakLevel = true;
     private bool levelComplete = false;
     public GameObject MiniBoss;
     public GameObject Player;
     public GameObject SneakEndPoint;
+
     void Start()
     {
         
@@ -28,10 +29,12 @@ public class GameManager : MonoBehaviour
         }
 
         if(levelComplete) ChangeScene();
+
+        
     }
 
-    void ChangeScene(){
-        Debug.Log("Completed Level!");
+    public void ChangeScene(){
+        // Debug.Log("Completed Level!");
         if(levelNumber == 0) {
             SceneManager.LoadScene("LevelOneSneak");
             levelComplete = false;
@@ -56,5 +59,24 @@ public class GameManager : MonoBehaviour
             levelComplete = true;
             Debug.Log("Player has passed sneak position point");
         }
+    }
+
+    public void RestartLevel()
+    {
+        if (levelNumber > 0){
+            levelNumber -= 1;
+        }
+        else {
+            levelNumber = 0;
+        }
+
+        
+        Debug.Log("Restarting Level! Current level number: " + levelNumber);
+        ChangeScene();
+    }
+
+    public void BackToMenu(){
+        levelNumber = 0;
+        SceneManager.LoadScene("StartScreen");
     }
 }
