@@ -19,13 +19,11 @@ public class PlayerShootingScript : MonoBehaviour
     public bool hasWeapon;
     private bool canShoot = true; 
     private float shootCooldown = 0.6f;
-    public float bulletAmt;
     private Camera mainCamera;
     private Vector3 mousePosition; 
 
     void Start(){
         playerMovement = gameObject.GetComponent<PlayerManagementScript>();
-        bulletAmt = 1000;
     }
 
     void Update()
@@ -40,11 +38,10 @@ public class PlayerShootingScript : MonoBehaviour
     }
 
     private void Shoot(){
-        if(hasWeapon && bulletAmt != 0){
+        if(hasWeapon){
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = shootingDirection*bulletSpeed;
             bullet.AddForce(bulletSpeed*shootingDirection, ForceMode2D.Impulse);
-            bulletAmt--;
         }
     }
 
@@ -68,9 +65,5 @@ public class PlayerShootingScript : MonoBehaviour
     //setter for manipulating hasWeapon
     public void SetHasWeapon(bool weaponPick){
         hasWeapon = weaponPick;
-    }
-
-    public void SetBulletAmt(float amt){
-        bulletAmt = amt;
     }
 }
