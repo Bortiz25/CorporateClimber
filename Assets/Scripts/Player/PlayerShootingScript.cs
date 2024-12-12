@@ -22,10 +22,12 @@ public class PlayerShootingScript : MonoBehaviour
     public float bulletAmt;
     private Camera mainCamera;
     private Vector3 mousePosition; 
+    private AudioSource audioSource;
 
     void Start(){
         playerMovement = gameObject.GetComponent<PlayerManagementScript>();
         bulletAmt = 1000;
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,7 +43,8 @@ public class PlayerShootingScript : MonoBehaviour
 
     private void Shoot(){
         if(hasWeapon && bulletAmt != 0){
-            Debug.Log("shootingDirection: " + shootingDirection);
+            audioSource.time = 0.1f;
+            audioSource.Play();
             Rigidbody2D bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.velocity = shootingDirection*bulletSpeed;
             bullet.AddForce(bulletSpeed*shootingDirection, ForceMode2D.Impulse);
