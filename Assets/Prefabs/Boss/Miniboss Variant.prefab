@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1400317365558881004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.006, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0.021, y: 1.345, z: 0}
   m_LocalScale: {x: 2, y: 0.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 998916479
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.23137255, b: 0.23137255, a: 1}
   m_FlipX: 0
@@ -108,6 +108,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1400317365558881004}
+    - target: {fileID: -5239362294381169647, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1400317365558881004}
+    - target: {fileID: 1488951800310560206, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+      propertyPath: minibossManagementScript
+      value: 
+      objectReference: {fileID: 4977580833148228651}
     - target: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       propertyPath: m_Name
       value: Miniboss Variant
@@ -178,10 +186,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4579867135388726934, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4338550156112466129}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4977580833148228651}
   m_SourcePrefab: {fileID: 100100000, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
 --- !u!4 &737675377527695829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4579867135388726934, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
   m_PrefabInstance: {fileID: 3869237751174111043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2313209513415911959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1560603888690017620, guid: 02855f25fd6ce35469cfe2fff2a25434, type: 3}
+  m_PrefabInstance: {fileID: 3869237751174111043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4977580833148228651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313209513415911959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6016969bc9ffc4d90c32238f53aacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1400317365558881004}
+  health: 2
+  damage: 0.2

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3488606209972974903}
   - component: {fileID: 2077101405022104509}
   - component: {fileID: -7278416037252223734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossBullet
   m_TagString: BossBullet
   m_Icon: {fileID: 0}
@@ -170,4 +170,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
