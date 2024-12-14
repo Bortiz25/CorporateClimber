@@ -190,5 +190,7 @@ public class PlayerManagementScript : MonoBehaviour
         transform.position = startPos;
     }
 
+    
+
 
 }

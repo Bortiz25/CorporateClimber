@@ -54,10 +54,29 @@ public class GameManager : MonoBehaviour
         if(MiniBoss.GetComponent<MinibossMovementScript>().health == 0) levelComplete = true;
     }
 
-    private void CheckSneakDone(){
-        if(Player.transform.position.y > SneakEndPoint.transform.position.y) {
+    private void CheckSneakDone()
+    {
+        PlayerManagementScript playerScript = Player.GetComponent<PlayerManagementScript>();
+        
+        // Check both position and file count
+        if (Player.transform.position.y > SneakEndPoint.transform.position.y) 
+        {
             levelComplete = true;
-            Debug.Log("Player has passed sneak position point");
+            float files = playerScript.GetFileAmt();
+            if (levelNumber == 0) 
+            {
+                if (files == 2)
+                {
+                    SceneManager.LoadScene("LevelTwoSneak");
+                    levelComplete = false;
+                    levelNumber++;
+                } else {
+                    SceneManager.LoadScene("SethLevelOneMiniboss");
+                    levelComplete = false;
+                    levelNumber++;
+                }
+            }
+            Debug.Log("Player has passed sneak position and collected enough files");
         }
     }
 
