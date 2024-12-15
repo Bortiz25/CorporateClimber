@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d02384bc16954d2b82716bc31ded765
+guid: 3835f96bbb15e4515b83d26bf7e14a83
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (1)_0
+      name: first_boss_sheet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 41
-        width: 28
-        height: 28
+        x: 31
+        y: 56
+        width: 34
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee9dc60b9a7ec4fbd8db0765cf4018f6
-      internalID: 1984887386
+      spriteID: 5d9e99f6a76c84019855a888938afbfb
+      internalID: -2044687145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (1)_1
+      name: first_boss_sheet_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 41
-        width: 28
-        height: 28
+        x: 131
+        y: 54
+        width: 34
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2d5af49a756d4618ba724402ee3bbca
-      internalID: 1019360695
+      spriteID: 10eb94429f730416a9665063a40fda49
+      internalID: -1935502292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (1)_2
+      name: first_boss_sheet_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 41
-        width: 28
-        height: 28
+        x: 230
+        y: 53
+        width: 35
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca14c6702fe8e42bda49fec094f8a3ef
-      internalID: -1514574506
+      spriteID: 9c459833ce4fc4e2492d3406335c52ea
+      internalID: 618772206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: first_boss_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 56
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f59a166de8764944ad233c0131b0e1c
+      internalID: 83473775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: first_boss_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 56
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d079b06ab702c45689ceeea7a390473d
+      internalID: 997421872
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pixil-frame-0 (1)_0: 1984887386
-      pixil-frame-0 (1)_1: 1019360695
-      pixil-frame-0 (1)_2: -1514574506
+      first_boss_sheet_0: -2044687145
+      first_boss_sheet_1: -1935502292
+      first_boss_sheet_2: 618772206
+      first_boss_sheet_3: 83473775
+      first_boss_sheet_4: 997421872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
