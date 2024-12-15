@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if(!(MinibossLevel && SneakLevel)){
             if(MinibossLevel) CheckMinibossDone();
-            if(SneakLevel) CheckSneakDone();
+            //if(SneakLevel) CheckSneakDone();
         }
 
         if(levelComplete) ChangeScene();
