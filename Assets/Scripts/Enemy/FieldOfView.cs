@@ -10,8 +10,11 @@ public class FieldOfView : MonoBehaviour
     public float range = 8;
     public Transform target;
     private Color defaultColor;
+    private Sprite spriteDefault;
+    public Sprite spriteMad;
     private void Start() {
-        defaultColor = GetComponent<SpriteRenderer>().color;    
+        defaultColor = GetComponent<SpriteRenderer>().color; 
+        spriteDefault = GetComponent<SpriteRenderer>().sprite;    
     }
     void Update()
     {
@@ -24,12 +27,14 @@ public class FieldOfView : MonoBehaviour
                 Debug.DrawRay(fovPoint.position, dir, Color.red);
 
                 // ENEMY turns RED
-                GetComponent<SpriteRenderer>().color = Color.red;
+                //GetComponent<SpriteRenderer>().color = Color.red;
+                GetComponent<SpriteRenderer>().sprite = spriteMad;
                 // Enable ENEMY movement towards player
                 GetComponent<EnemyMovement>().playerInFieldOfView = true;
             } else {
                 // ENEMY turns DEFAULT COLOR
-                GetComponent<SpriteRenderer>().color = defaultColor;
+                GetComponent<SpriteRenderer>().sprite = spriteDefault;
+                //GetComponent<SpriteRenderer>().color = defaultColor;
                 // Disable ENEMY movement towards player
                 GetComponent<EnemyMovement>().playerInFieldOfView = false;
             }
