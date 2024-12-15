@@ -49,7 +49,6 @@ public class EnemyMovement : MonoBehaviour
         if(other.CompareTag("Player")){
             // player.GetComponent<PlayerManagementScript>().Reset();
             player.GetComponent<PlayerManagementScript>().OnCharacterDeath();
-        } 
-        
+        }
     }
 }

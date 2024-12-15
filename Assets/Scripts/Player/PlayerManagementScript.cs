@@ -30,7 +30,7 @@ public class PlayerManagementScript : MonoBehaviour
     //health bar code
     // could be better placed somewhere else
     public GameObject healthBar;
-    private float healthVal = 1.5f;
+    public float healthVal = 1.5f;
     private float diminishAmt = 0.2f;
     public bool inBoss = true;
 
@@ -150,7 +150,7 @@ public class PlayerManagementScript : MonoBehaviour
         if (healthVal <= 0)
         {
             healthVal = 0;
-            // Die();
+            OnCharacterDeath();
         }
     }
 

@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12860931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2419366347939345149, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+  m_PrefabInstance: {fileID: 1155492621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &34934860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,7 +365,7 @@ MonoBehaviour:
   MinibossLevel: 1
   SneakLevel: 0
   MiniBoss: {fileID: 34934861}
-  Player: {fileID: 0}
+  Player: {fileID: 12860931}
   SneakEndPoint: {fileID: 0}
 --- !u!4 &261164245
 Transform:

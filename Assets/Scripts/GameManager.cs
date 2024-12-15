@@ -34,11 +34,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void ChangeScene(){
-        // Debug.Log("Completed Level!");
+        Debug.Log("Previous level number: " + levelNumber);
         if(levelNumber == 0) {
             SceneManager.LoadScene("LevelOneSneak");
             levelComplete = false;
             levelNumber++;
+
         } else if (levelNumber == 1) {
             SceneManager.LoadScene("SethLevelOneMiniboss");
             levelComplete = false;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
             levelComplete = false;
             levelNumber++;
         }
+        Debug.Log("Current level number: " + levelNumber);
     }
 
     private void CheckMinibossDone(){
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
             levelNumber += 2;
             levelComplete = true;
         }
+        
     }
 
     private void CheckSneakDone()
@@ -87,8 +90,7 @@ public class GameManager : MonoBehaviour
     {
         if (levelNumber > 0){
             levelNumber -= 1;
-        }
-        else {
+        } else {
             levelNumber = 0;
         }
 
