@@ -23,7 +23,7 @@ public class WeaponScript : MonoBehaviour
     void PlayerDetection(){
         if(Physics2D.OverlapCircle(gameObject.transform.position, 1f, playerMask) && Input.GetKeyDown(KeyCode.Space)){
             playerShoot.SetHasWeapon(true);
-            playerShoot.SetBulletAmt(10f);
+            //playerShoot.SetBulletAmt(10f);
             Debug.Log("Item picked up");
         }
     }
