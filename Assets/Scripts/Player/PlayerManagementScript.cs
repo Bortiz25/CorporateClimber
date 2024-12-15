@@ -42,6 +42,8 @@ public class PlayerManagementScript : MonoBehaviour
     // Radius for checking collisions
     private float checkRadius = 0.5f;
 
+    // hurt sound variable
+    private AudioSource hurtSound;
     
 
     void Start()
@@ -53,6 +55,8 @@ public class PlayerManagementScript : MonoBehaviour
 
         healthBar.gameObject.SetActive(inBoss);
         
+        hurtSound= GameObject.Find("HurtSound").GetComponent<AudioSource>();
+        hurtSound.time = 0.25f;
     }
 
     void Update()
@@ -146,6 +150,7 @@ public class PlayerManagementScript : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
+        hurtSound.Play();
         healthVal -= damage;
         if (healthVal <= 0)
         {

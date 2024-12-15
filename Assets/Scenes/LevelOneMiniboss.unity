@@ -1559,6 +1559,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miniboss Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2385670826280348301, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: minibossManagementScript
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444055152321935811, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: Priority
+      value: 139
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444055152321935811, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_Volume
+      value: 0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444055152321935811, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eb7768843d9f14a8687e544314bf5321, type: 3}
     m_RemovedComponents:
     - {fileID: 213992436187671378, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
     - {fileID: 4977580833148228651, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
@@ -4247,13 +4263,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 558b2c310c698411b8689140b195368e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.011
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
