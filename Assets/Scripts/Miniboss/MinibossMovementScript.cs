@@ -18,11 +18,8 @@ public class MinibossMovementScript : MonoBehaviour
     private int direction = 1; // 1 for forward, -1 for backward
     private Rigidbody2D rb;
     private bool isWaiting = false;
-    private Vector2 savedMovement; 
-    public GameObject healthBar;
-    public float health = 2f;
-    public float damage = 0.2f;
-    private bool isAlive = true; 
+    private Vector2 savedMovement;
+
 
 
     void Start()
@@ -60,8 +57,7 @@ public class MinibossMovementScript : MonoBehaviour
             StartCoroutine(WaitAtWaypoint());
         }
 
-        //health management
-        healthBar.transform.localScale = new Vector3(health, 0.13f, 1);
+
     }
 
     private void MoveToNextWaypoint()
@@ -123,31 +119,15 @@ public class MinibossMovementScript : MonoBehaviour
         }
     }
 
-    public Vector2 GetMovementVector(){
-        if(savedMovement == Vector2.zero){
-            savedMovement = new Vector2(0,1);
+    public Vector2 GetMovementVector()
+    {
+        if (savedMovement == Vector2.zero)
+        {
+            savedMovement = new Vector2(0, 1);
         }
         return savedMovement;
     }
 
-// player bullet collision
-    // private void OnCollisionEnter2D(Collision2D collision2D){
-    //     if(collision2D.gameObject.CompareTag("PlayerBullet")){
-    //         Debug.Log("Boss is getting hit");
-    //         if(health - damage < 0 ) health = 0;
-    //         else health-= damage;
-
-    //         Destroy(collision2D.gameObject);
-    //     }
-    // }
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("PlayerBullet")){
-            Debug.Log("Boss is getting hit");
-            if(health - damage < 0 ) health = 0;
-            else health-= damage;
-            Destroy(other.gameObject);
-        }
-    }
 
     private void OnDrawGizmos()
     {

@@ -14,5 +14,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SneakLevels/LevelTwoSneak.unity
     guid: f7e77dc4caced481394192617b67681b
+  - enabled: 1
+    path: Assets/Scenes/LevelOneMiniboss.unity
+    guid: a21a15fb2ab6449318a676c906ed3bcb
+  - enabled: 1
+    path: Assets/Scenes/LevelThreeBoss.unity
+    guid: ff166e627d7ceaf449624b4b373269de
+  - enabled: 1
+    path: Assets/Scenes/LevelTwoMiniboss.unity
+    guid: 9bce3f97726ff48489d33f92ac2eb85c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 799d67ad3e70c4232874a7e05c7c1025, type: 2}

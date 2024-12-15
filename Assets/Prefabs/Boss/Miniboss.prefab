@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8967411179097965115}
   - component: {fileID: -6869317905383717672}
   - component: {fileID: 1488951800310560206}
+  - component: {fileID: -5239362294381169647}
   m_Layer: 0
   m_Name: Miniboss
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 998916479
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 0.9245283, g: 0.6401922, b: 0.8934224, a: 1}
@@ -194,7 +195,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429c5ced494f883419e232f1564662a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: -7278416037252223734, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
+  bulletPrefab: {fileID: 8929872377100988584, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
   bulletSpeed: 9
   shootInterval: 2
   playerTransform: {fileID: 0}
+--- !u!114 &-5239362294381169647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560603888690017620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6016969bc9ffc4d90c32238f53aacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

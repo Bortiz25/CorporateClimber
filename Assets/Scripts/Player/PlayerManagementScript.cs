@@ -23,7 +23,7 @@ public class PlayerManagementScript : MonoBehaviour
     private bool canRoll = true;
     private bool isRolling;
     private float rollSpeed = 12;
-    private float rollingTime = 0.25f;
+    private float rollingTime = 0.35f;
     private float rollCooldown = 1f;
 
     //health bar code
@@ -74,6 +74,7 @@ public class PlayerManagementScript : MonoBehaviour
         // player animation calls
         GetComponent<PlayerAnimation>().SetAnimationDirection(savedMovement);
         GetComponent<PlayerAnimation>().SetAnimationRollBool(isRolling);
+        Debug.Log(isRolling);
         if(movement == Vector2.zero){
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(false);
         }
@@ -178,6 +179,10 @@ public class PlayerManagementScript : MonoBehaviour
     //         Destroy(collision.gameObject);
     //     }
     // }
+
+    public float getFileCount() {
+        return fileAmt; 
+    }
     public void Reset()
     {
         transform.position = startPos;
