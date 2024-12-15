@@ -101,8 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fovAngle: 360
   fovPoint: {fileID: 963228832283630170}
-  range: 3
+  range: 10
   target: {fileID: 0}
+  spriteMad: {fileID: 21300000, guid: 1cda1536cc5dc4e60a11d29a1e8e4602, type: 3}
 --- !u!114 &1309737089571621800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,11 +117,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInFieldOfView: 0
-  followPath: 0
+  followPath: 1
   spinAround: 0
   player: {fileID: 0}
   defaultSpeed: 2
-  pathPoints: []
+  pathPoints:
+  - {fileID: 0}
 --- !u!60 &4099430888227301664
 PolygonCollider2D:
   m_ObjectHideFlags: 0
