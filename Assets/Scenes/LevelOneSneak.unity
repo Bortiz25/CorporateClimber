@@ -16514,6 +16514,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 516177715}
+    - target: {fileID: 4380656598724793021, guid: fdd0b0e02a6354847a4d8780bddbebb4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -970603177, guid: d8700f66b088c4affa7a66091274302b, type: 3}
     - target: {fileID: 5218923218803452465, guid: fdd0b0e02a6354847a4d8780bddbebb4, type: 3}
       propertyPath: m_Name
       value: File (1)
@@ -18765,6 +18769,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 516177715}
+    - target: {fileID: 4380656598724793021, guid: fdd0b0e02a6354847a4d8780bddbebb4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -970603177, guid: d8700f66b088c4affa7a66091274302b, type: 3}
     - target: {fileID: 5218923218803452465, guid: fdd0b0e02a6354847a4d8780bddbebb4, type: 3}
       propertyPath: m_Name
       value: File

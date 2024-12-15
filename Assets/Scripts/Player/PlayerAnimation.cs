@@ -11,8 +11,14 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     public void SetAnimationDirection(Vector2 dir){
-        playerAnimator.SetFloat("DirectionX", dir.x);
-        playerAnimator.SetFloat("DirectionY", dir.y);
+        if(dir.y > 0 || dir.y < 0){
+            playerAnimator.SetFloat("DirectionY", dir.y);
+            playerAnimator.SetFloat("DirectionX", 0);
+        }
+        else{
+            playerAnimator.SetFloat("DirectionX", dir.x);
+            playerAnimator.SetFloat("DirectionY", dir.y);
+        }
     }
 
     public void SetAnimationWalkBool(bool isWalking){

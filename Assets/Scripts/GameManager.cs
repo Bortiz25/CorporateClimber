@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             levelComplete = false;
             
         } else if (levelNumber == 1) {
-            SceneManager.LoadScene("SethLevelOneMiniboss");
+            SceneManager.LoadScene("LevelOneMiniboss");
             levelComplete = false;
         
         } else {
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void CheckMinibossDone(){
-        if(MiniBoss.GetComponent<MinibossMovementScript>().health == 0) levelComplete = true;
+        if(MiniBoss.GetComponent<MinibossManagementScript>().health == 0) levelComplete = true;
     }
 
     private void CheckSneakDone(){
