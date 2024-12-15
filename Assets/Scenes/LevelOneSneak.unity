@@ -8161,7 +8161,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8181,7 +8181,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8782,30 +8782,30 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 607331759, guid: afcba6f78679d477a9df7451e52fd2d3, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1144859841, guid: afcba6f78679d477a9df7451e52fd2d3, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 957222989, guid: 2665eafbe786b441f88f88099d0d8ec2, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1709754418, guid: afcba6f78679d477a9df7451e52fd2d3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1604024096, guid: 2665eafbe786b441f88f88099d0d8ec2, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1144859841, guid: afcba6f78679d477a9df7451e52fd2d3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1535232186, guid: afcba6f78679d477a9df7451e52fd2d3, type: 3}
   - m_RefCount: 1
@@ -12448,7 +12448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7698f54de98b4454f9facbb1e94539cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 1
   MinibossLevel: 0
   SneakLevel: 1
   MiniBoss: {fileID: 0}
@@ -12624,6 +12623,10 @@ PrefabInstance:
     - target: {fileID: 1309737089571621800, guid: 774c0878517ac441dae4c2a84f5859ec, type: 3}
       propertyPath: pathPoints.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309737089571621800, guid: 774c0878517ac441dae4c2a84f5859ec, type: 3}
+      propertyPath: pathPoints.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3109802343143066058, guid: 774c0878517ac441dae4c2a84f5859ec, type: 3}
       propertyPath: range
