@@ -19,7 +19,8 @@ public class MinibossMovementScript : MonoBehaviour
     private Rigidbody2D rb;
     private bool isWaiting = false;
     private Vector2 savedMovement;
-
+    private AudioSource laughingEffect;
+    private bool canLaugh = true;
 
 
     void Start()
@@ -37,6 +38,9 @@ public class MinibossMovementScript : MonoBehaviour
         // Start at the first waypoint
         transform.position = waypoints[currentWaypointIndex].position;
         MoveToNextWaypoint();
+
+        // aduio source for laughing effect
+        laughingEffect = GameObject.Find("LaughingEffect").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -57,6 +61,7 @@ public class MinibossMovementScript : MonoBehaviour
             StartCoroutine(WaitAtWaypoint());
         }
 
+        CallLaughingSound();
 
     }
 
@@ -151,5 +156,17 @@ public class MinibossMovementScript : MonoBehaviour
                 Gizmos.DrawLine(waypoints[i].position, waypoints[0].position);
             }
         }
+    }
+
+    private IEnumerator LaughingHandler(){
+        canLaugh = false;
+        laughingEffect.Play();
+        yield return new WaitForSeconds(10f);
+        canLaugh = true;
+    }
+
+    private void CallLaughingSound(){
+        if(canLaugh) StartCoroutine(LaughingHandler());
+        else return;
     }
 }

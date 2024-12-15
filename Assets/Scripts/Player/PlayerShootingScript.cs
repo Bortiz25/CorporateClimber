@@ -21,9 +21,11 @@ public class PlayerShootingScript : MonoBehaviour
     private float shootCooldown = 0.6f;
     private Camera mainCamera;
     private Vector3 mousePosition; 
+    private AudioSource shootingEffect;
 
     void Start(){
         playerMovement = gameObject.GetComponent<PlayerManagementScript>();
+        shootingEffect = GameObject.Find("ShootingSound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +50,8 @@ public class PlayerShootingScript : MonoBehaviour
     private IEnumerator ShootingHandler(){
         canShoot = false; 
         Shoot();
+        shootingEffect.time = 0.1f;
+        shootingEffect.Play();
         yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
     }
