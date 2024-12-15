@@ -51,7 +51,10 @@ public class GameManager : MonoBehaviour
     }
 
     private void CheckMinibossDone(){
-        if(MiniBoss.GetComponent<MinibossMovementScript>().health == 0) levelComplete = true;
+        if(MiniBoss.GetComponent<MinibossMovementScript>().health == 0) {
+            levelNumber += 2;
+            levelComplete = true;
+        }
     }
 
     private void CheckSneakDone()
