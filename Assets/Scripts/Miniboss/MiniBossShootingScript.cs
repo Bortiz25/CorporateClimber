@@ -25,6 +25,7 @@ public class MiniBossShootingScript : MonoBehaviour
 
     // Add a pattern index for level three shooting
     private int levelThreePatternIndex = 0;
+    private AudioSource shootSound;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class MiniBossShootingScript : MonoBehaviour
         playerTransform = player.transform;
         halfHealth = minibossManagementScript.health / 2;
         quarterHealth = halfHealth / 2f;
+        shootSound = GameObject.Find("ShootSound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -55,6 +57,8 @@ public class MiniBossShootingScript : MonoBehaviour
             // Cannot shoot without a bullet prefab or player reference
             return;
         }
+        shootSound.time = 0.3f;
+        shootSound.Play();
         levelThreeShooting();
     }
 

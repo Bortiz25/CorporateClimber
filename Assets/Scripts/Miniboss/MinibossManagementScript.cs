@@ -9,11 +9,13 @@ public class MinibossManagementScript : MonoBehaviour
     public float health = 2f;
     public float damage = 0.2f;
     private bool isAlive = true;
+    private AudioSource hurtSound;
 
     // Start is called before the first frame update
     void Start()
-    {
-
+    {   
+        // Audio Source for hurt noises
+        hurtSound = GameObject.Find("HurtSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,8 @@ public class MinibossManagementScript : MonoBehaviour
     {
         if (other.CompareTag("PlayerBullet"))
         {
+            // this needs to be addressed or fixed when we fully implement bosses
+            hurtSound.Play();
             Debug.Log("Boss is getting hit");
             if (health - damage < 0) health = 0;
             else health -= damage;
