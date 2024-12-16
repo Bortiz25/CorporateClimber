@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public string currentScene;
-    public string nextScene;
+    public static string currentScene;
+    public static string nextScene;
 
     public bool MinibossLevel = false;
     public bool SneakLevel = true;
@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Current Scene: " + currentScene);
+        Debug.Log("Next Scene: " + nextScene);
+        
         if (!MinibossLevel && SneakLevel)
         {
             CheckSneakDone();
@@ -135,7 +138,6 @@ public class GameManager : MonoBehaviour
 
     public void CheckMiniBossDone()
     {
-        if (MiniBoss == null) return;
         MinibossManagementScript minibossScript = MiniBoss.GetComponent<MinibossManagementScript>();
         if (minibossScript.health <= 0)
         {
