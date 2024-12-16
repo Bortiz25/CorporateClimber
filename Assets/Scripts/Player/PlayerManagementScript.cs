@@ -54,7 +54,7 @@ public class PlayerManagementScript : MonoBehaviour
         startPos = transform.position;
 
         healthBar.gameObject.SetActive(inBoss);
-        
+
         if (gameManager == null)
         {
             gameManager = FindObjectOfType<GameManager>();
@@ -81,7 +81,8 @@ public class PlayerManagementScript : MonoBehaviour
         GetComponent<PlayerAnimation>().SetAnimationDirection(savedMovement);
         GetComponent<PlayerAnimation>().SetAnimationRollBool(isRolling);
         Debug.Log(isRolling);
-        if(movement == Vector2.zero){
+        if (movement == Vector2.zero)
+        {
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(false);
         }
         // Debug.Log("files: " + fileAmt);
@@ -133,7 +134,8 @@ public class PlayerManagementScript : MonoBehaviour
     {
         movement = val.Get<Vector2>();
         gameObject.GetComponent<Rigidbody2D>().velocity = movement * speed;
-        if(movement != Vector2.zero){
+        if (movement != Vector2.zero)
+        {
             savedMovement = movement;
             // player animation call
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(true);
@@ -157,6 +159,7 @@ public class PlayerManagementScript : MonoBehaviour
         {
             healthVal = 0;
             OnCharacterDeath();
+
         }
     }
 
@@ -174,11 +177,12 @@ public class PlayerManagementScript : MonoBehaviour
     }
 
     public void OnCharacterDeath()
-    {   
+    {
+        GameManager.LastLevelScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("DeathScreen");
         isAlive = false;
-        gameManager.currentScene = SceneManager.GetActiveScene().name;
     }
+
 
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
@@ -193,15 +197,16 @@ public class PlayerManagementScript : MonoBehaviour
     //     }
     // }
 
-    public float getFileCount() {
-        return fileAmt; 
+    public float getFileCount()
+    {
+        return fileAmt;
     }
     public void Reset()
     {
         transform.position = startPos;
     }
 
-    
+
 
 
 }
