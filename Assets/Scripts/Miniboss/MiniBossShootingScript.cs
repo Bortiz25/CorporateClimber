@@ -69,6 +69,7 @@ public class MiniBossShootingScript : MonoBehaviour
             audioCounter++;
         }
         if(audioCounter == 1 ) {
+            backgroundAudio.Stop();
             backgroundAudio.clip = backgroundSound50;
             backgroundAudio.loop = true;
             backgroundAudio.volume =  0.2f;
