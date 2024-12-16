@@ -194,7 +194,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 183
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -10398,6 +10398,10 @@ PrefabInstance:
       propertyPath: numBullets
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5151662848141578679, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
     - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: backgroundAudio
       value: 
