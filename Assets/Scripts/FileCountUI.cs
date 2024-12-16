@@ -9,7 +9,7 @@ public class FileCountUI : MonoBehaviour
 
     void Start()
     {
-        fileCountText = GameObject.Find("File Count Text (TMP)").GetComponent<TextMeshProUGUI>();
+        fileCountText = GameObject.Find("File Counter Text (TMP)").GetComponent<TextMeshProUGUI>();
         playerScript = GameObject.Find("Player").GetComponent<PlayerManagementScript>();
     }
     
@@ -17,6 +17,6 @@ public class FileCountUI : MonoBehaviour
     {
         // Update text to show current file count
         fileCountText.text = "Files: " + playerScript.GetFileAmt().ToString();
-        Debug.Log("file count UI: " + playerScript.GetFileAmt());
+        //Debug.Log("file count UI: " + playerScript.GetFileAmt());
     }
 }

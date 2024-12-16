@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem; // Replace 'YourNamespace' with the actual namespace of MinibossManagementScript
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int levelNumber = 0;
+    public int levelNumber = 0;
     public bool MinibossLevel = false;
     public bool SneakLevel = true;
     private bool levelComplete = false;
@@ -24,40 +25,37 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(!(MinibossLevel && SneakLevel)){
-            if(MinibossLevel) CheckMinibossDone();
+            if(MinibossLevel) CheckMiniBossDone();
             if(SneakLevel) CheckSneakDone();
         }
 
         if(levelComplete) ChangeScene();
-
-        
     }
 
     public void ChangeScene(){
         Debug.Log("Previous level number: " + levelNumber);
         if(levelNumber == 0) {
+            SceneManager.LoadScene("IntroLevel");
+            levelComplete = false;
+            
+        } else if(levelNumber == 1) {
             SceneManager.LoadScene("LevelOneSneak");
             levelComplete = false;
-            levelNumber++;
-
-        } else if (levelNumber == 1) {
-            SceneManager.LoadScene("SethLevelOneMiniboss");
+            
+        } else if(levelNumber == 2){
+            SceneManager.LoadScene("LevelOneMiniboss");
             levelComplete = false;
-            levelNumber++;
-        } else {
+            
+        } else if(levelNumber == 3){
             SceneManager.LoadScene("LevelTwoSneak");
             levelComplete = false;
-            levelNumber++;
+            
+        } else if(levelNumber == 4){
+            SceneManager.LoadScene("LevelTwoMiniboss");
+            levelComplete = false;   
         }
-        Debug.Log("Current level number: " + levelNumber);
-    }
-
-    private void CheckMinibossDone(){
-        if(MiniBoss.GetComponent<MinibossMovementScript>().health == 0) {
-            levelNumber += 2;
-            levelComplete = true;
-        }
-        
+        levelNumber++;
+        Debug.Log("New level number: " + levelNumber);
     }
 
     private void CheckSneakDone()
@@ -69,7 +67,7 @@ public class GameManager : MonoBehaviour
         {
             levelComplete = true;
             float files = playerScript.GetFileAmt();
-            if (levelNumber == 0) 
+            if (levelNumber == 2) 
             {
                 if (files == 2)
                 {
@@ -77,12 +75,20 @@ public class GameManager : MonoBehaviour
                     levelComplete = false;
                     levelNumber++;
                 } else {
-                    SceneManager.LoadScene("SethLevelOneMiniboss");
+                    SceneManager.LoadScene("BossLevels/LevelOneMiniboss");
                     levelComplete = false;
                     levelNumber++;
                 }
             }
-            Debug.Log("Player has passed sneak position and collected enough files");
+            //Debug.Log("Player has passed sneak position and collected enough files");
+        }
+    }
+
+    public void CheckMiniBossDone(){
+        MinibossManagementScript minibossScript = MiniBoss.GetComponent<MinibossManagementScript>();
+        if(minibossScript.health <= 0){
+            levelNumber++;
+            levelComplete = true;
         }
     }
 
@@ -95,7 +101,7 @@ public class GameManager : MonoBehaviour
         }
 
         
-        Debug.Log("Restarting Level! Current level number: " + levelNumber);
+        //Debug.Log("Restarting Level! Current level number: " + levelNumber);
         ChangeScene();
     }
 
@@ -103,4 +109,5 @@ public class GameManager : MonoBehaviour
         levelNumber = 0;
         SceneManager.LoadScene("StartScreen");
     }
+    
 }
