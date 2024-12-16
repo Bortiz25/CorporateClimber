@@ -485,14 +485,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1783464833253874669, guid: 5b8d911739ee44280a93b75c1a93b314, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1722503888}
     - target: {fileID: 1780008764808900371, guid: 5b8d911739ee44280a93b75c1a93b314, type: 3}
       propertyPath: resetButton
       value: 
       objectReference: {fileID: 182616456}
+    - target: {fileID: 1783464833253874669, guid: 5b8d911739ee44280a93b75c1a93b314, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1722503888}
+    - target: {fileID: 2860011941782298437, guid: 5b8d911739ee44280a93b75c1a93b314, type: 3}
+      propertyPath: m_text
+      value: Need 18 to be promoted
+      objectReference: {fileID: 0}
     - target: {fileID: 3227742947497065692, guid: 5b8d911739ee44280a93b75c1a93b314, type: 3}
       propertyPath: m_Pivot.x
       value: 0
