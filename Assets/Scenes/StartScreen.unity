@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7698f54de98b4454f9facbb1e94539cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScene: 
+  nextScene: 
   MinibossLevel: 0
   SneakLevel: 0
   MiniBoss: {fileID: 0}
@@ -389,7 +391,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1753145648}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
+        m_MethodName: OnStartButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -509,6 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7698f54de98b4454f9facbb1e94539cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScene: 
+  nextScene: 
   MinibossLevel: 0
   SneakLevel: 0
   MiniBoss: {fileID: 0}
