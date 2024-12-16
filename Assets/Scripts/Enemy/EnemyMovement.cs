@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     // Moves ENEMY towards PLAYER position
     private void MoveToFollowPlayer(){
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, defaultSpeed*Time.deltaTime);
-        transform.up = player.transform.position - new Vector3(transform.position.x, transform.position.y,0f);
+        //transform.up = player.transform.position - new Vector3(transform.position.x, transform.position.y,0f);
     }
 
     // Moves ENEMY on predefined path (loops)
@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
             // Determines next path point to move towards
             var targetPosition = pathPoints[pathPointsListIndex].position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, defaultSpeed*Time.deltaTime);
-            transform.up = targetPosition - new Vector3(transform.position.x, transform.position.y,0f);
+            //transform.up = targetPosition - new Vector3(transform.position.x, transform.position.y,0f);
             // Increments pathPointListIndex when a point in the path has been reached
             if(transform.position == targetPosition) pathPointsListIndex++;
 
@@ -46,6 +46,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player")) player.GetComponent<PlayerManagementScript>().Reset();
+        if(other.CompareTag("PlayerTransform")) player.GetComponent<PlayerManagementScript>().Reset();
     }
 }

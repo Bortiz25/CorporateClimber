@@ -6,13 +6,34 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelOneSneak.unity
+    path: Assets/Scenes/StartScreen.unity
+    guid: 600f6b510903945b3bb26718f2004afa
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: ef6ae3cc0ddac48dc83e21f6e0a2c434
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: a4cd11262360e46f6b58b89989ecf49d
+  - enabled: 1
+    path: Assets/Scenes/SneakLevels/IntroLevel.unity
+    guid: 57ba91ed6b6164c81910241c7d001893
+  - enabled: 1
+    path: Assets/Scenes/SneakLevels/LevelOneSneak.unity
     guid: 406ad0dd3ed7244049e950edd0b68e16
   - enabled: 1
-    path: Assets/Scenes/SethLevelOneMiniboss.unity
-    guid: b3072564c4699484fa46de4bf3e5a3c9
-  - enabled: 1
-    path: Assets/Scenes/LevelTwoSneak.unity
+    path: Assets/Scenes/SneakLevels/LevelTwoSneak.unity
     guid: f7e77dc4caced481394192617b67681b
+  - enabled: 1
+    path: Assets/Scenes/SneakLevels/LevelThreeSneak.unity
+    guid: 487f58fa23d8c6c45a0829a821a0a3d6
+  - enabled: 1
+    path: Assets/Scenes/BossLevels/LevelOneMiniboss.unity
+    guid: a21a15fb2ab6449318a676c906ed3bcb
+  - enabled: 1
+    path: Assets/Scenes/BossLevels/LevelTwoMiniboss.unity
+    guid: 9bce3f97726ff48489d33f92ac2eb85c
+  - enabled: 1
+    path: Assets/Scenes/BossLevels/LevelThreeBoss.unity
+    guid: ff166e627d7ceaf449624b4b373269de
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 799d67ad3e70c4232874a7e05c7c1025, type: 2}

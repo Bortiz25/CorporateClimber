@@ -7,6 +7,7 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManagementScript : MonoBehaviour
 {
@@ -23,25 +24,28 @@ public class PlayerManagementScript : MonoBehaviour
     private bool canRoll = true;
     private bool isRolling;
     private float rollSpeed = 12;
-    private float rollingTime = 0.25f;
+    private float rollingTime = 0.35f;
     private float rollCooldown = 1f;
 
     //health bar code
     // could be better placed somewhere else
     public GameObject healthBar;
-    private float healthVal = 1.5f;
+    public float healthVal = 1.5f;
     private float diminishAmt = 0.2f;
     public bool inBoss = true;
 
     // checking for life variables
-    private bool isAlive = true;
+    public bool isAlive = true;
     // checking files picked up
     private float fileAmt = 0;
 
 
     // Radius for checking collisions
     private float checkRadius = 0.5f;
+    public string prevScene;
 
+    // hurt sound variable
+    private AudioSource hurtSound;
     
 
     void Start()
@@ -53,6 +57,8 @@ public class PlayerManagementScript : MonoBehaviour
 
         healthBar.gameObject.SetActive(inBoss);
         
+        hurtSound= GameObject.Find("HurtSoundPlayer").GetComponent<AudioSource>();
+        hurtSound.time = 0.25f;
     }
 
     void Update()
@@ -74,7 +80,9 @@ public class PlayerManagementScript : MonoBehaviour
         // player animation calls
         GetComponent<PlayerAnimation>().SetAnimationDirection(savedMovement);
         GetComponent<PlayerAnimation>().SetAnimationRollBool(isRolling);
-        if(movement == Vector2.zero){
+        Debug.Log(isRolling);
+        if (movement == Vector2.zero)
+        {
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(false);
         }
         // Debug.Log("files: " + fileAmt);
@@ -126,7 +134,8 @@ public class PlayerManagementScript : MonoBehaviour
     {
         movement = val.Get<Vector2>();
         gameObject.GetComponent<Rigidbody2D>().velocity = movement * speed;
-        if(movement != Vector2.zero){
+        if (movement != Vector2.zero)
+        {
             savedMovement = movement;
             // player animation call
             GetComponent<PlayerAnimation>().SetAnimationWalkBool(true);
@@ -145,11 +154,13 @@ public class PlayerManagementScript : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
+        hurtSound.Play();
         healthVal -= damage;
         if (healthVal <= 0)
         {
             healthVal = 0;
-            // Die();
+            OnCharacterDeath();
+
         }
     }
 
@@ -166,6 +177,14 @@ public class PlayerManagementScript : MonoBehaviour
         }
     }
 
+    public void OnCharacterDeath()
+    {
+        GameManager.LastLevelScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("DeathScreen");
+        isAlive = false;
+    }
+
+
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
     //     Debug.Log("Checking for BossBullet collision");
@@ -178,8 +197,17 @@ public class PlayerManagementScript : MonoBehaviour
     //         Destroy(collision.gameObject);
     //     }
     // }
+
+    public float getFileCount()
+    {
+        return fileAmt;
+    }
     public void Reset()
     {
-        transform.position = startPos;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
+
+
 }
