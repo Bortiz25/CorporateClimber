@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class AdvancedBossMovement : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class AdvancedBossMovement : MonoBehaviour
     private BossState currentState = BossState.Idle;
     private float lastPositionSwitchTime;
 
+    [SerializeField] AudioSource laughingSound;
+    private bool canLaugh = true;
+
     void Start()
     {
         if (!playerTransform) 
@@ -58,6 +62,7 @@ public class AdvancedBossMovement : MonoBehaviour
     {
         HandleStateLogic();
         AttemptStateTransitions();
+        CallLaughingSound();
     }
 
     private void HandleStateLogic()
@@ -183,5 +188,17 @@ public class AdvancedBossMovement : MonoBehaviour
         // Visualize current target
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(currentTarget, 0.3f);
+    }
+
+    private IEnumerator LaughingHandler(){
+        canLaugh = false;
+        laughingSound.Play();
+        yield return new WaitForSeconds(10f);
+        canLaugh = true;
+    }
+
+    private void CallLaughingSound(){
+        if(canLaugh) StartCoroutine(LaughingHandler());
+        else return;
     }
 }

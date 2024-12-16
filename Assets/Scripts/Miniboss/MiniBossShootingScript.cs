@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class MiniBossShootingScript : MonoBehaviour
 {
@@ -25,7 +27,14 @@ public class MiniBossShootingScript : MonoBehaviour
 
     // Add a pattern index for level three shooting
     private int levelThreePatternIndex = 0;
+    private float maxHealth;
     private AudioSource shootSound;
+   // [SerializeField] AudioSource backgroundSound100;
+       // attempting new way of setting sound
+    [SerializeField] AudioSource backgroundAudio;
+    [SerializeField] AudioClip backgroundSound100;
+    [SerializeField] AudioClip backgroundSound50;
+    private int audioCounter = 0;
 
     void Start()
     {
@@ -35,10 +44,16 @@ public class MiniBossShootingScript : MonoBehaviour
         halfHealth = minibossManagementScript.health / 2;
         quarterHealth = halfHealth / 2f;
         shootSound = GameObject.Find("ShootSound").GetComponent<AudioSource>();
+        //audio stuff
+        backgroundAudio.clip = backgroundSound100;
+        backgroundAudio.loop = true;
+        backgroundAudio.volume =  0.2f;
+        backgroundAudio.Play();
     }
 
     void Update()
     {
+        maxHealth = minibossManagementScript.health;
         // Update the shooting timer
         shootTimer += Time.deltaTime;
 
@@ -47,6 +62,19 @@ public class MiniBossShootingScript : MonoBehaviour
         {
             ShootTowardsPlayer();
             shootTimer = 0f; // Reset the timer
+        }
+
+        // counter for different music
+        if(maxHealth > halfHealth) {
+            audioCounter++;
+        }
+        if(audioCounter == 1 ) {
+            backgroundAudio.Stop();
+            backgroundAudio.clip = backgroundSound50;
+            backgroundAudio.loop = true;
+            backgroundAudio.volume =  0.2f;
+            backgroundAudio.Play();
+            audioCounter++;
         }
     }
 
