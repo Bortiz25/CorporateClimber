@@ -5120,6 +5120,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022810024305224651, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 998916479
+      objectReference: {fileID: 0}
     - target: {fileID: 5647463846450954498, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_Name
       value: HurtSoundPlayer
