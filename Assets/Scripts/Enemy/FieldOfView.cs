@@ -22,7 +22,7 @@ public class FieldOfView : MonoBehaviour
        float angle = Vector3.Angle(dir, fovPoint.up);
        RaycastHit2D r = Physics2D.Raycast(fovPoint.position, dir, range);
        if(angle < fovAngle / 2){
-            if(r && r.collider.CompareTag("Player")){
+            if(r && r.collider.CompareTag("PlayerTransform")){
                 Debug.Log("Player has been seen");
                 Debug.DrawRay(fovPoint.position, dir, Color.red);
 

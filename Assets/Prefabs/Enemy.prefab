@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3466298466549379512}
   - component: {fileID: 3109802343143066058}
   - component: {fileID: 1309737089571621800}
-  - component: {fileID: 4099430888227301664}
+  - component: {fileID: 1753233928557424261}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.7941175, b: 0.36320752, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 772719f6738b9475c889a68763018a9b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fovAngle: 360
   fovPoint: {fileID: 963228832283630170}
-  range: 10
+  range: 5
   target: {fileID: 0}
   spriteMad: {fileID: 21300000, guid: 1cda1536cc5dc4e60a11d29a1e8e4602, type: 3}
 --- !u!114 &1309737089571621800
@@ -117,14 +117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInFieldOfView: 0
-  followPath: 1
+  followPath: 0
   spinAround: 0
   player: {fileID: 0}
   defaultSpeed: 2
   pathPoints:
   - {fileID: 0}
---- !u!60 &4099430888227301664
-PolygonCollider2D:
+--- !u!61 &1753233928557424261
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,19 +155,16 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.40791702}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 1.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84737587, y: 0.93416595}
+  m_EdgeRadius: 0
