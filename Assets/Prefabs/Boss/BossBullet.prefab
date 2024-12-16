@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8929872377100988584}
   - component: {fileID: -7431694226542156737}
   - component: {fileID: 7018531319322697787}
+  - component: {fileID: -5213454692340799187}
   m_Layer: 11
   m_Name: BossBullet
   m_TagString: BossBullet
@@ -158,3 +159,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5213454692340799187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330531903706002846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3e4fcd67db24a2f964d228b8b6ecb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
