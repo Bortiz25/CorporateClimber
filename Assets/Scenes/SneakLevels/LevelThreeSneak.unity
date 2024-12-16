@@ -2147,11 +2147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3613704737437499497, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 3613704737437499497, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.4
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 3613704737437499497, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3857,8 +3857,7 @@ Transform:
   m_LocalPosition: {x: 3.6957662, y: 10.750184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 615064369}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1749036237 stripped
