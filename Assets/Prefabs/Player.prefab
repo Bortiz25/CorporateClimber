@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 3437451108866015985}
   - component: {fileID: 308437574327484877}
   m_Layer: 0
-  m_Name: HurtSound
+  m_Name: HurtSoundPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
