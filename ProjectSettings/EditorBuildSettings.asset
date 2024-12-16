@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DeathScreen.unity
     guid: ef6ae3cc0ddac48dc83e21f6e0a2c434
   - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: a4cd11262360e46f6b58b89989ecf49d
+  - enabled: 1
     path: Assets/Scenes/SneakLevels/IntroLevel.unity
     guid: 57ba91ed6b6164c81910241c7d001893
   - enabled: 1
