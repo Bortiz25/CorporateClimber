@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int levelNumber = 0;
+    public string currentScene;
+    public string nextScene;
     public bool MinibossLevel = false;
     public bool SneakLevel = true;
     private bool levelComplete = false;
@@ -18,7 +20,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "StartScreen")
+        {
+            nextScene = "IntroLevel";
+        }
+        else if (currentScene == "IntroLevel")
+        {
+            nextScene = "LevelOneSneak";
+        }
     }
 
     // Update is called once per frame
@@ -34,27 +44,31 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(){
         Debug.Log("Previous level number: " + levelNumber);
-        if(levelNumber == 0) {
-            SceneManager.LoadScene("IntroLevel");
+        if(currentScene == "StartScreen") {
+            currentScene = nextScene;
+            nextScene = "LevelOneSneak";
             levelComplete = false;
+            SceneManager.LoadScene(currentScene);
             
-        } else if(levelNumber == 1) {
-            SceneManager.LoadScene("LevelOneSneak");
+        } else if(currentScene == "IntroLevel") {
+            currentScene = "LevelOneSneak";
+            nextScene = "LevelTwoSneak";
+            SceneManager.LoadScene(currentScene);
             levelComplete = false;
-            
-        } else if(levelNumber == 2){
-            SceneManager.LoadScene("LevelOneMiniboss");
-            levelComplete = false;
-            
-        } else if(levelNumber == 3){
-            SceneManager.LoadScene("LevelTwoSneak");
-            levelComplete = false;
-            
-        } else if(levelNumber == 4){
-            SceneManager.LoadScene("LevelTwoMiniboss");
-            levelComplete = false;   
         }
-        levelNumber++;
+        // } else if(levelNumber == 2){
+        //     SceneManager.LoadScene("LevelOneMiniboss");
+        //     levelComplete = false;
+            
+        // } else if(levelNumber == 3){
+        //     SceneManager.LoadScene("LevelTwoSneak");
+        //     levelComplete = false;
+            
+        // } else if(levelNumber == 4){
+        //     SceneManager.LoadScene("LevelTwoMiniboss");
+        //     levelComplete = false;   
+        // }
+        //levelNumber++;
         Debug.Log("New level number: " + levelNumber);
     }
 
@@ -65,19 +79,63 @@ public class GameManager : MonoBehaviour
         // Check both position and file count
         if (Player.transform.position.y > SneakEndPoint.transform.position.y) 
         {
-            levelComplete = true;
+            //levelComplete = true;
             float files = playerScript.GetFileAmt();
-            if (levelNumber == 2) 
+            Debug.Log("Current level: " + SceneManager.GetActiveScene().name);
+            Debug.Log("Next level: " + nextScene);
+
+            if (SceneManager.GetActiveScene().name == "StartScreen"){
+                currentScene = nextScene;
+                nextScene = "LevelOneSneak";
+                SceneManager.LoadScene(currentScene);
+            }
+            else if (SceneManager.GetActiveScene().name == "IntroLevel"){
+                currentScene = nextScene;
+                nextScene = "LevelTwoSneak";
+                SceneManager.LoadScene(currentScene);
+                levelComplete = false;
+                // levelNumber++;
+            } else if (SceneManager.GetActiveScene().name == "LevelOneSneak") 
             {
                 if (files == 2)
                 {
-                    SceneManager.LoadScene("LevelTwoSneak");
+                    currentScene = nextScene;
+                    nextScene = "LevelThreeSneak";
+                    SceneManager.LoadScene(currentScene);
                     levelComplete = false;
-                    levelNumber++;
+                    // levelNumber++;
                 } else {
-                    SceneManager.LoadScene("BossLevels/LevelOneMiniboss");
+                    currentScene = "LevelOneMiniboss";
+                    nextScene = "LevelTwoSneak";
+                    SceneManager.LoadScene(currentScene);
                     levelComplete = false;
                     levelNumber++;
+                }
+            } else if(SceneManager.GetActiveScene().name == "LevelTwoSneak") {
+                if(files == 4)
+                {
+                    currentScene = nextScene;
+                    nextScene = "EndGame";
+                    SceneManager.LoadScene(currentScene);
+                    levelComplete = false;
+                    //levelNumber++;
+                } else {
+                    currentScene = "LevelTwoMiniboss";
+                    nextScene = "LevelThreeSneak";
+                    SceneManager.LoadScene(currentScene);
+                    levelComplete = false;
+                    
+                }
+            } else if(SceneManager.GetActiveScene().name == "LevelThreeSneak") {
+                if(files == 6)
+                {
+                    SceneManager.LoadScene("EndGame");
+                    // levelComplete = false;
+                } else {
+                    currentScene = "LevelThreeBoss";
+                    nextScene = "EndGame";
+                    SceneManager.LoadScene(currentScene);
+                    levelComplete = false;
                 }
             }
             //Debug.Log("Player has passed sneak position and collected enough files");
@@ -89,24 +147,33 @@ public class GameManager : MonoBehaviour
         if(minibossScript.health <= 0){
             levelNumber++;
             levelComplete = true;
+            if(SceneManager.GetActiveScene().name == "LevelOneMiniboss"){
+                currentScene = nextScene;
+                nextScene = "LevelThreeSneak";
+                SceneManager.LoadScene(currentScene);
+                levelComplete = false;
+            } else if(SceneManager.GetActiveScene().name == "LevelTwoMiniboss"){
+                currentScene = nextScene;
+                nextScene = "EndGame";
+                SceneManager.LoadScene(currentScene);
+                levelComplete = false;
+            } else if(SceneManager.GetActiveScene().name == "LevelThreeBoss"){
+                SceneManager.LoadScene("EndGame");
+            }
         }
     }
 
     public void RestartLevel()
     {
-        if (levelNumber > 0){
-            levelNumber -= 1;
-        } else {
-            levelNumber = 0;
-        }
-
+        Debug.Log("Restarting level, currently at: " + currentScene + "\nnext scene: " + nextScene);
         
-        //Debug.Log("Restarting Level! Current level number: " + levelNumber);
-        ChangeScene();
+        // Specific handling for miniboss scenes
+        SceneManager.LoadScene(currentScene);
+        levelComplete = false;
     }
 
     public void BackToMenu(){
-        levelNumber = 0;
+        //levelNumber = 0;
         SceneManager.LoadScene("StartScreen");
     }
     

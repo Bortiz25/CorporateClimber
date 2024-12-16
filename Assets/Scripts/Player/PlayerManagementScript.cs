@@ -42,8 +42,9 @@ public class PlayerManagementScript : MonoBehaviour
 
     // Radius for checking collisions
     private float checkRadius = 0.5f;
+    public string prevScene;
 
-    
+    public GameManager gameManager;
 
     void Start()
     {
@@ -54,6 +55,10 @@ public class PlayerManagementScript : MonoBehaviour
 
         healthBar.gameObject.SetActive(inBoss);
         
+        if (gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
     }
 
     void Update()
@@ -169,9 +174,10 @@ public class PlayerManagementScript : MonoBehaviour
     }
 
     public void OnCharacterDeath()
-    {
+    {   
         SceneManager.LoadScene("DeathScreen");
         isAlive = false;
+        gameManager.currentScene = SceneManager.GetActiveScene().name;
     }
 
     // private void OnTriggerEnter2D(Collider2D collision)
