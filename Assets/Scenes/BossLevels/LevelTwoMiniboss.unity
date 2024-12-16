@@ -188,7 +188,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6ec0720da8303425ab0f0d740b2f14c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.08
+  m_Volume: 0.129
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -354,6 +354,10 @@ PrefabInstance:
     - target: {fileID: 3613704737437499497, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647463846450954498, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Name
+      value: HurtSoundPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 6878025494065728479, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_SortingLayer
@@ -10395,6 +10399,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: backgroundAudio
+      value: 
+      objectReference: {fileID: 233031794}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1698497446}
@@ -10405,7 +10413,7 @@ PrefabInstance:
     - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: backgroundSound100
       value: 
-      objectReference: {fileID: 233031794}
+      objectReference: {fileID: 8300000, guid: 558b2c310c698411b8689140b195368e, type: 3}
     - target: {fileID: 8607805281526257057, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: m_Name
       value: Miniboss 2

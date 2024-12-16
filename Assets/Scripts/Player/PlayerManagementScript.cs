@@ -55,7 +55,7 @@ public class PlayerManagementScript : MonoBehaviour
 
         healthBar.gameObject.SetActive(inBoss);
         
-        hurtSound= GameObject.Find("HurtSound").GetComponent<AudioSource>();
+        hurtSound= GameObject.Find("HurtSoundPlayer").GetComponent<AudioSource>();
         hurtSound.time = 0.25f;
     }
 
