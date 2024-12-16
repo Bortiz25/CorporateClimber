@@ -37,7 +37,6 @@ public class MiniBossShootingScript : MonoBehaviour
         halfHealth = minibossManagementScript.health / 2;
         quarterHealth = halfHealth / 2f;
         shootSound = GameObject.Find("ShootSound").GetComponent<AudioSource>();
-        //backgroundSound100.Play();
     }
 
     void Update()
