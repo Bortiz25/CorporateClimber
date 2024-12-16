@@ -204,7 +204,7 @@ public class PlayerManagementScript : MonoBehaviour
     }
     public void Reset()
     {
-        transform.position = startPos;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
