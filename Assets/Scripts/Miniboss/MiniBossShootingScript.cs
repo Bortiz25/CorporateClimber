@@ -25,7 +25,9 @@ public class MiniBossShootingScript : MonoBehaviour
 
     // Add a pattern index for level three shooting
     private int levelThreePatternIndex = 0;
+    private float maxHealth;
     private AudioSource shootSound;
+   // [SerializeField] AudioSource backgroundSound100;
 
     void Start()
     {
@@ -35,10 +37,12 @@ public class MiniBossShootingScript : MonoBehaviour
         halfHealth = minibossManagementScript.health / 2;
         quarterHealth = halfHealth / 2f;
         shootSound = GameObject.Find("ShootSound").GetComponent<AudioSource>();
+        //backgroundSound100.Play();
     }
 
     void Update()
     {
+        maxHealth = minibossManagementScript.health;
         // Update the shooting timer
         shootTimer += Time.deltaTime;
 
@@ -47,6 +51,11 @@ public class MiniBossShootingScript : MonoBehaviour
         {
             ShootTowardsPlayer();
             shootTimer = 0f; // Reset the timer
+        }
+
+        if(maxHealth > halfHealth) {
+            //backgroundSound100.Stop();
+            //backgroundSound100.PlayOneShot(backgroundSound50);
         }
     }
 

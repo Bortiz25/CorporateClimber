@@ -12,6 +12,8 @@ public class FieldOfView : MonoBehaviour
     private Color defaultColor;
     private Sprite spriteDefault;
     public Sprite spriteMad;
+
+    [SerializeField] AudioSource caughtSound;
     private void Start() {
         defaultColor = GetComponent<SpriteRenderer>().color; 
         spriteDefault = GetComponent<SpriteRenderer>().sprite;    
@@ -25,13 +27,14 @@ public class FieldOfView : MonoBehaviour
             if(r && r.collider.CompareTag("Player")){
                 Debug.Log("Player has been seen");
                 Debug.DrawRay(fovPoint.position, dir, Color.red);
-
+                caughtSound.Play();
                 // ENEMY turns RED
                 //GetComponent<SpriteRenderer>().color = Color.red;
                 GetComponent<SpriteRenderer>().sprite = spriteMad;
                 // Enable ENEMY movement towards player
                 GetComponent<EnemyMovement>().playerInFieldOfView = true;
             } else {
+                caughtSound.Stop();
                 // ENEMY turns DEFAULT COLOR
                 GetComponent<SpriteRenderer>().sprite = spriteDefault;
                 //GetComponent<SpriteRenderer>().color = defaultColor;
