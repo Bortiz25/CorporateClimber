@@ -7786,6 +7786,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5647463846450954498, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
+      propertyPath: m_Name
+      value: HurtSoundPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 6878025494065728479, guid: 7787286a031df4f7c8302a9071d1a172, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -9474,9 +9478,25 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5151662848141578679, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: backgroundAudio
+      value: 
+      objectReference: {fileID: 1205981947}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 777553462}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: backgroundSound50
+      value: 
+      objectReference: {fileID: 8300000, guid: dd698f919309e4f3cb77e5c6e9ed8adc, type: 3}
+    - target: {fileID: 8535623655866815803, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
+      propertyPath: backgroundSound100
+      value: 
+      objectReference: {fileID: 8300000, guid: dd698f919309e4f3cb77e5c6e9ed8adc, type: 3}
     - target: {fileID: 8607805281526257057, guid: 444314831addd674fb6ca39054a2d5e1, type: 3}
       propertyPath: m_Name
       value: Miniboss 2

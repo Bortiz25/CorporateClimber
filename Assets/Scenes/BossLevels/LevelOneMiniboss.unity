@@ -5292,6 +5292,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2385670826280348301, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5151662848141578679, guid: 65bd465c185d42f48ad33ec1c8541683, type: 3}
+    - target: {fileID: 2385670826280348301, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: backgroundAudio
       value: 
       objectReference: {fileID: 854468992}

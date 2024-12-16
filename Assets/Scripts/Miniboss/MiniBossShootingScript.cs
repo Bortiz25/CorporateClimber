@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MiniBossShootingScript : MonoBehaviour
@@ -36,6 +37,8 @@ public class MiniBossShootingScript : MonoBehaviour
     [SerializeField] AudioClip backgroundSound50;
     private int audioCounter = 0;
 
+    private string sceneName;
+
     void Start()
     {
         // Find the player object by tag
@@ -49,6 +52,8 @@ public class MiniBossShootingScript : MonoBehaviour
         backgroundAudio.loop = true;
         backgroundAudio.volume =  0.2f;
         backgroundAudio.Play();
+
+        sceneName = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -87,7 +92,14 @@ public class MiniBossShootingScript : MonoBehaviour
         }
         shootSound.time = 0.3f;
         shootSound.Play();
-        levelThreeShooting();
+        if(sceneName == "LevelOneMiniboss"){
+            Debug.Log("level one shoot");
+            levelOneShooting();
+        } else if( sceneName == "LevelTwoMiniboss"){
+            levelTwoShooting();
+        }else if(sceneName == "LevelThreeBoss"){
+            levelThreeShooting();
+        }
     }
 
     private void levelThreeShooting()
