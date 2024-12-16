@@ -5329,7 +5329,7 @@ PrefabInstance:
       objectReference: {fileID: -2044687145, guid: 3835f96bbb15e4515b83d26bf7e14a83, type: 3}
     - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SortingOrder
@@ -5337,7 +5337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_SortingLayerID
-      value: 998916479
+      value: 2034732929
       objectReference: {fileID: 0}
     - target: {fileID: 1738272839051976164, guid: bafc70eb77aa64ef38c534ddfc3e99fe, type: 3}
       propertyPath: m_WasSpriteAssigned
