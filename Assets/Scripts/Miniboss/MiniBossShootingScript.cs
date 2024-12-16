@@ -30,14 +30,18 @@ public class MiniBossShootingScript : MonoBehaviour
     private int levelThreePatternIndex = 0;
     private float maxHealth;
     private AudioSource shootSound;
-   // [SerializeField] AudioSource backgroundSound100;
-       // attempting new way of setting sound
+    // [SerializeField] AudioSource backgroundSound100;
+    // attempting new way of setting sound
     [SerializeField] AudioSource backgroundAudio;
     [SerializeField] AudioClip backgroundSound100;
     [SerializeField] AudioClip backgroundSound50;
     private int audioCounter = 0;
 
     private string sceneName;
+
+    [Header("Startup Settings")]
+    public float startDelay = 2f;  // Time in seconds before boss begins attacking
+    private bool bossCanAttack = false;
 
     void Start()
     {
@@ -50,38 +54,48 @@ public class MiniBossShootingScript : MonoBehaviour
         //audio stuff
         backgroundAudio.clip = backgroundSound100;
         backgroundAudio.loop = true;
-        backgroundAudio.volume =  0.2f;
+        backgroundAudio.volume = 0.2f;
         backgroundAudio.Play();
 
         sceneName = SceneManager.GetActiveScene().name;
+        StartCoroutine(EnableBossAttacksAfterDelay(startDelay));
+
+    }
+
+    private IEnumerator EnableBossAttacksAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        bossCanAttack = true;  // After this time passes, boss will start attacking
     }
 
     void Update()
     {
         maxHealth = minibossManagementScript.health;
-        // Update the shooting timer
         shootTimer += Time.deltaTime;
 
-        // Check if it's time to shoot
-        if (shootTimer >= shootInterval)
+        // Only shoot if bossCanAttack is true
+        if (bossCanAttack && shootTimer >= shootInterval)
         {
             ShootTowardsPlayer();
             shootTimer = 0f; // Reset the timer
         }
 
-        // counter for different music
-        if(maxHealth > halfHealth) {
+        // Music logic remains the same
+        if (maxHealth > halfHealth)
+        {
             audioCounter++;
         }
-        if(audioCounter == 1 ) {
+        if (audioCounter == 1)
+        {
             backgroundAudio.Stop();
             backgroundAudio.clip = backgroundSound50;
             backgroundAudio.loop = true;
-            backgroundAudio.volume =  0.2f;
+            backgroundAudio.volume = 0.2f;
             backgroundAudio.Play();
             audioCounter++;
         }
     }
+
 
     private void ShootTowardsPlayer()
     {
@@ -92,12 +106,17 @@ public class MiniBossShootingScript : MonoBehaviour
         }
         shootSound.time = 0.3f;
         shootSound.Play();
-        if(sceneName == "LevelOneMiniboss"){
+        if (sceneName == "LevelOneMiniboss")
+        {
             Debug.Log("level one shoot");
             levelOneShooting();
-        } else if( sceneName == "LevelTwoMiniboss"){
+        }
+        else if (sceneName == "LevelTwoMiniboss")
+        {
             levelTwoShooting();
-        }else if(sceneName == "LevelThreeBoss"){
+        }
+        else if (sceneName == "LevelThreeBoss")
+        {
             levelThreeShooting();
         }
     }

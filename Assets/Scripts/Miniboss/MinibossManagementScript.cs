@@ -68,7 +68,7 @@ public class MinibossManagementScript : MonoBehaviour
         }
 
         // Optionally, destroy the boss object after some delay if not needed anymore
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1f);
     }
 
 
